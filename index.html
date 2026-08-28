@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$FONE — fone sick</title>
+<meta name="description" content="fone sick ($FONE) — patient found unresponsive, staring at a phone screen that says SICK. Diagnosis pending. Chart only goes up when temperature does.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤒</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- floating decor layer -->
+<div class="decor-layer" id="decorLayer" aria-hidden="true"></div>
+
+<!-- vitals status bar -->
+<div class="vitalsbar">
+  <div class="vitalsbar-inner">
+    <span class="vb-item">🌡️ TEMP <b id="vbTemp">103.6°F</b></span>
+    <span class="vb-item">💓 BPM <b id="vbBpm">142</b></span>
+    <span class="vb-item vb-clock">🕐 <b id="vbClock">--:--</b></span>
+    <span class="vb-item vb-alert">📶 0 BARS · 100% ONLINE</span>
+    <button class="vb-sound" id="soundToggle" aria-label="Toggle heart monitor sound">🔇</button>
+  </div>
+</div>
+
+<!-- marquee ticker -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>DIAGNOSIS: SICK &nbsp;•&nbsp; 0% TAX &nbsp;•&nbsp; LP BURNED &nbsp;•&nbsp; CONTRACT RENOUNCED &nbsp;•&nbsp; TEMPERATURE RISING &nbsp;•&nbsp; REFUSES TO SELL &nbsp;•&nbsp; $FONE &nbsp;•&nbsp; DIAGNOSIS: SICK &nbsp;•&nbsp; 0% TAX &nbsp;•&nbsp; LP BURNED &nbsp;•&nbsp; CONTRACT RENOUNCED &nbsp;•&nbsp; TEMPERATURE RISING &nbsp;•&nbsp; REFUSES TO SELL &nbsp;•&nbsp; $FONE &nbsp;•&nbsp;</span>
+  </div>
+</div>
+
+<!-- nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">🤒 fone sick</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#notes">Symptoms</a>
+      <a href="#vitals">Vitals</a>
+      <a href="#board">Evidence</a>
+      <a href="#treatment">Treatment</a>
+      <a href="#recovery">How to Buy</a>
+      <a href="#contact">Contact</a>
+      <button class="ca-chip" id="navCaChip">CA: <span id="navCaText">not minted yet</span> 📋</button>
+    </div>
+  </div>
+</nav>
+
+<!-- hero -->
+<header class="hero" id="top">
+  <div class="hero-media">
+    <img src="assets/mascot-hero.jpg" alt="Sick monkey mascot lying in bed with a bandage on its head, holding a phone that reads SICK" loading="eager">
+    <div class="hero-media-glow"></div>
+    <div class="bubble bubble-1">🌡️ 103.6°F</div>
+    <div class="bubble bubble-2">📶 0 bars</div>
+    <div class="bubble bubble-3">💊 refused meds</div>
+  </div>
+  <div class="hero-content">
+    <div class="patient-tag">PATIENT FILE #0001 — STATUS: SICK</div>
+    <h1 class="wordmark">fone sick</h1>
+    <p class="tagline">Found in bed, staring at a phone that says <em>sick</em>. Temperature rising. Bags refusing to sell. Diagnosis pending.</p>
+    <div class="ticker-big">$FONE</div>
+    <div class="ca-row">
+      <span class="ca-label">CONTRACT</span>
+      <button class="ca-copy" id="heroCaChip">
+        <span id="heroCaText">not minted yet</span>
+        <span class="copy-icon">📋</span>
+      </button>
+    </div>
+    <div class="cta-row">
+      <a href="#" class="btn btn-primary" id="buyBtn">💊 Buy $FONE</a>
+      <a href="#" class="btn btn-ghost" id="chartBtn">📈 Chart</a>
+      <a href="#" class="btn btn-ghost" id="xBtn">🐦 X</a>
+    </div>
+  </div>
+</header>
+
+<!-- chart notes / lore -->
+<section class="section notes" id="notes">
+  <h2 class="section-title">🩺 Chart Notes</h2>
+  <p class="section-sub">Attending physician's log. Handwriting deteriorates after Day 7.</p>
+
+  <div class="log-list">
+    <div class="log-entry reveal">
+      <div class="log-day">DAY 1</div>
+      <div class="log-text">Patient found unresponsive under a blanket, holding a phone with the screen locked on the word <strong>"sick."</strong> Refuses to put it down. Vitals stable. Portfolio: not.</div>
+    </div>
+    <div class="log-entry reveal">
+      <div class="log-day">DAY 3</div>
+      <div class="log-text">Temperature spikes correlate exactly with green candles. When the chart turns red, patient goes cold and silent. This is either a coincidence or the whole disease.</div>
+    </div>
+    <div class="log-entry reveal">
+      <div class="log-day">DAY 6</div>
+      <div class="log-text">Bandage applied to head for reasons unclear to staff. Patient insists it "helps with the signal." We have stopped asking questions.</div>
+    </div>
+    <div class="log-entry reveal">
+      <div class="log-day">DAY 9</div>
+      <div class="log-text">Offered patient an exit liquidity opportunity. Patient did not blink. Did not look up from phone. We consider this a "no."</div>
+    </div>
+    <div class="log-entry reveal">
+      <div class="log-day">DAY 14</div>
+      <div class="log-text">Diagnosis confirmed: chronic <strong>Fone Sickness</strong>. Symptoms include diamond hands, thumb cramps, 0 bars of signal, 100% online, and a full recovery that never quite arrives. Prognosis: bullish.</div>
+    </div>
+  </div>
+</section>
+
+<!-- vitals monitor -->
+<section class="section vitals-section" id="vitals">
+  <h2 class="section-title">📊 Vitals Monitor</h2>
+  <p class="section-sub">Live readings. Line goes up, patient gets worse, bag gets heavier.</p>
+
+  <div class="monitor-frame">
+    <canvas id="ecgCanvas" class="ecg-canvas"></canvas>
+    <div class="monitor-label">FONE // LEAD II // 25mm/s</div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">Price</div>
+      <div class="stat-value" id="statPrice">N/A</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Market Cap</div>
+      <div class="stat-value" id="statMcap">N/A</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Liquidity</div>
+      <div class="stat-value" id="statLiq">N/A</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">24h Volume</div>
+      <div class="stat-value" id="statVol">N/A</div>
+    </div>
+    <div class="stat-card stat-card-joke">
+      <div class="stat-label">Temperature</div>
+      <div class="stat-value" id="statTemp">103.6°F</div>
+    </div>
+    <div class="stat-card stat-card-joke">
+      <div class="stat-label">Heart Rate</div>
+      <div class="stat-value" id="statBpm">142 bpm</div>
+    </div>
+  </div>
+  <p class="stat-note">Price / Mcap / Liquidity / Volume pull live from DexScreener once the contract is set. Temperature and Heart Rate are, regrettably, not medical data.</p>
+</section>
+
+<!-- evidence board -->
+<section class="section board-section" id="board">
+  <h2 class="section-title">📌 The Evidence Board</h2>
+  <p class="section-sub">Everything is connected. Nobody can prove otherwise.</p>
+  <div class="board-frame">
+    <img src="assets/case-board.jpg" alt="Corkboard with red string connecting the sick monkey to a Doge coin logo, a DexScreener app, a wallet balance, and a pill bottle" loading="lazy">
+  </div>
+</section>
+
+<!-- treatment / tokenomics -->
+<section class="section treatment" id="treatment">
+  <h2 class="section-title">💊 Treatment Plan</h2>
+  <p class="section-sub">Prescribed by a doctor who does not exist, for a disease that isn't real.</p>
+
+  <div class="rx-label">
+    <div class="rx-header">
+      <span class="rx-cross">✚</span>
+      <div>
+        <div class="rx-title">FONE SICK PHARMACY</div>
+        <div class="rx-sub">Rx for: The Patient · Refills: ∞</div>
+      </div>
+    </div>
+    <div class="rx-rows">
+      <div class="rx-row"><span>Buy Tax</span><span>0%</span></div>
+      <div class="rx-row"><span>Sell Tax</span><span>0%</span></div>
+      <div class="rx-row"><span>Liquidity Pool</span><span>Burned</span></div>
+      <div class="rx-row"><span>Contract</span><span>Renounced</span></div>
+      <div class="rx-row"><span>Total Supply</span><span>1,000,000,000 $FONE</span></div>
+      <div class="rx-row"><span>Dosage</span><span>Take one bag. Hold indefinitely.</span></div>
+      <div class="rx-row"><span>Side Effects</span><span>Checking the chart every 4 minutes</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- how to buy -->
+<section class="section recovery" id="recovery">
+  <h2 class="section-title">🏥 How to Recover</h2>
+  <p class="section-sub">A full recovery is not guaranteed. A full bag is up to you.</p>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-title">Get a wallet</div>
+      <div class="step-text">Download Phantom or your wallet of choice. Fund it with SOL.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-title">Get some SOL</div>
+      <div class="step-text">Buy SOL on any exchange, send it to your wallet.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-title">Go to the pharmacy</div>
+      <div class="step-text">Head to the buy link above and connect your wallet.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <div class="step-title">Take your medicine</div>
+      <div class="step-text">Swap SOL for $FONE. Do not consult an actual doctor about this.</div>
+    </div>
+  </div>
+</section>
+
+<!-- contact / community -->
+<section class="section contact" id="contact">
+  <h2 class="section-title">☎️ Call the Nurse</h2>
+  <p class="section-sub">Community is the only visiting hours we have.</p>
+
+  <div class="contact-buttons">
+    <a href="#" class="btn btn-ghost" id="xBtn2">🐦 X / Twitter</a>
+    <a href="#" class="btn btn-ghost" id="tgBtn">✈️ Telegram</a>
+    <a href="#" class="btn btn-ghost" id="chartBtn2">📈 Dexscreener</a>
+  </div>
+
+  <div class="ca-row ca-row-footer">
+    <span class="ca-label">CONTRACT</span>
+    <button class="ca-copy" id="footerCaChip">
+      <span id="footerCaText">not minted yet</span>
+      <span class="copy-icon">📋</span>
+    </button>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>fone sick ($FONE) is a meme, not a diagnosis. This site is for entertainment purposes only, is not medical advice, and is not financial advice — please don't actually bandage a monkey's head.</p>
+  <p class="footer-copy">© 2026 fone sick. Get well soon, or don't.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
